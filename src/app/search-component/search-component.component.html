@@ -11,23 +11,25 @@
   Digite algum termo de busca para realizar a pesquisa
 </div>
 
-<div class="list-group mt-3 mb-5">
-  <div *ngIf="books.length <= 0" class="d-flex flex-column justify-content-center align-items-center mt-5">
-    <i class="fas fa-search fa-3x text-black-50"></i>
-    <p class="mt-4">Nenhum livro encontrado</p>
-  </div>
-  <div *ngIf="books.length > 0">
-    <a *ngFor="let book of books" href="#" class="list-group-item list-group-item-action">
-      <div class="row">
-        <div class="col-3">
-          <img src="{{book.image}}" />
+<div class="list-container mt-3">
+  <div class="list-group mt-3 mb-5">
+    <div *ngIf="books.length <= 0" class="d-flex flex-column justify-content-center align-items-center mt-5">
+      <i class="fas fa-search fa-3x text-black-50"></i>
+      <p class="mt-4">Nenhum livro encontrado</p>
+    </div>
+    <div *ngIf="books.length > 0">
+      <a *ngFor="let book of books" href="#" class="list-group-item list-group-item-action">
+        <div class="row">
+          <div class="col-3">
+            <img src="{{book.image}}" />
+          </div>
+          <div class="col-9 d-flex flex-column">
+            <h6>{{ book.title }}</h6>
+            <p>{{ book.description }}</p>
+            <button class="btn btn-primary align-self-end">Favorito <i class="fas fa-plus"></i></button>
+          </div>
         </div>
-        <div class="col-9 d-flex flex-column">
-          <h6>{{ book.title }}</h6>
-          <p>{{ book.description }}</p>
-          <button class="btn btn-primary align-self-end">Favorito <i class="fas fa-plus"></i></button>
-        </div>
-      </div>
-    </a>
+      </a>
+    </div>
   </div>
 </div>
